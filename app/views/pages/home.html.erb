@@ -1,3 +1,43 @@
-<h1 class="display-1">
-  Wellcome
+<h1 class="display-6 text-center text-success mb-5">
+  <strong>
+    doctors and patients through appointments
+  </strong>
 </h1>
+
+<div class="p-5 border border-secondary rounded my-3">
+  <h3 class="text-success">Doctor</h3>
+
+  <% @doctors.each do |doctor| %>
+    <strong>doctor</strong> <%= doctor %><br>
+    <strong>doctor.<span class="text-primary">name</span></strong> <%= doctor.name %><br>
+    <strong>doctor.<span class="text-primary">patients</span></strong> <%= doctor.patients %><br>
+    <strong>doctor.<span class="text-primary">appointments</span></strong> <%= doctor.appointments %><br>
+    <strong>doctor.<span class="text-primary">appointments.last.appointment_date</span></strong> <%= doctor.appointments.last.appointment_date %><br>
+  <% end %>
+</div>
+
+<div class="p-5 border border-secondary rounded my-3">
+  <h3 class="text-success">Patient</h3>
+
+  <% @patients.each do |patient| %>
+    <strong>patient</strong> <%= patient %><br>
+    <strong>patient.<span class="text-primary">name</span></strong> <%= patient.name %><br>
+    <strong>patient.<span class="text-primary">doctors</span></strong> <%= patient.doctors %><br>
+    <strong>patient.<span class="text-primary">appointments</span></strong> <%= patient.appointments %><br>
+    <strong>patient.<span class="text-primary">appointments.last.appointment_date</span></strong> <%= patient.appointments.last.appointment_date %><br>
+  <% end %>
+</div>
+
+<div class="p-5 border border-secondary rounded my-3">
+  <h3 class="text-success">Appointment</h3>
+
+  <% @appointments.each do |appointment| %>
+    <strong>appointment</strong> <%= appointment %><br>
+    <strong>appointment.<span class="text-primary">appointment_date</span></strong> <%= appointment.appointment_date %><br>
+    <strong>appointment.<span class="text-primary">doctor</span></strong> <%= appointment.doctor %><br>
+    <strong>appointment.<span class="text-primary">patient</span></strong> <%= appointment.patient %><br>
+    <strong>appointment.<span class="text-primary">doctor.name</span></strong> <%= appointment.doctor.name %><br>
+    <strong>appointment.<span class="text-primary">patient.name</span></strong> <%= appointment.patient.name %><br>
+    <strong>appointment.<span class="text-primary">patient.appointment_ids</span></strong> <%= appointment.patient.appointment_ids %><br>
+  <% end %>
+</div>
